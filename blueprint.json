@@ -16,7 +16,12 @@
         "patch": 0
       }
     },
-    "timestamp": "2018-12-19T09:55:27+11:00"
+    "software": {
+      "display": {
+        "title": "Kill Bill"
+      }
+    },
+    "timestamp": "2018-12-19T10:59:36+11:00"
   },
   "software": {
     "base": {
