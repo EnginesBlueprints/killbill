@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2018-12-19T09:50:39+11:00"
+    "timestamp": "2018-12-19T09:55:27+11:00"
   },
   "software": {
     "base": {
@@ -43,6 +43,11 @@
         "protocol": "tcp"
       }
     ],
+    "scripts": {
+      "start": {
+        "content": "#!/bin/sh\r\nsleep 600"
+      }
+    },
     "service_configurations": [
       {
         "publisher_namespace": "EnginesSystem",
