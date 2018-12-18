@@ -15,12 +15,73 @@
         "level": "alpha",
         "patch": 0
       }
-    }
+    },
+    "timestamp": "2018-12-19T09:50:39+11:00"
   },
   "software": {
     "base": {
+      "name": "killbill",
+      "framework": "docker",
+      "parent_image": "killbill/killbill:0.20.0",
       "deployment_type": "web",
-      "http_protocol": "https_and_http"
-    }
+      "http_protocol": "https_and_http",
+      "framework_port_override": 8080,
+      "memory": {
+        "required": 256,
+        "recommended": 256
+      }
+    },
+    "ports": [
+      {
+        "port": "8000",
+        "external": "8000",
+        "protocol": "tcp"
+      },
+      {
+        "port": "12345",
+        "external": "12345",
+        "protocol": "tcp"
+      }
+    ],
+    "service_configurations": [
+      {
+        "publisher_namespace": "EnginesSystem",
+        "type_path": "database/sql/mysql",
+        "variables": {
+          "database_name": "_Engines_Builder(engine_name)",
+          "database_host": "_Engines_System(mysql_host)",
+          "db_username": "_Engines_Builder(engine_name)",
+          "db_password": "_Engines_System(random(10))",
+          "collation": "utf8_general_ci",
+          "full_access": "false"
+        }
+      }
+    ],
+    "environment_variables": [
+      {
+        "name": "KILLBILL_DAO_URL",
+        "value": "jdbc:mysql://mysql:3306/_Engines_Environment(dbname)",
+        "immutable": true,
+        "input": {
+          "type": "boolean"
+        }
+      },
+      {
+        "name": "KILLBILL_DAO_USER",
+        "value": "_Engines_Environment(dbuser)",
+        "immutable": true,
+        "input": {
+          "type": "hidden"
+        }
+      },
+      {
+        "name": "KILLBILL_DAO_PASSWORD",
+        "value": "_Engines_Environment(passwd)",
+        "immutable": true,
+        "input": {
+          "type": "boolean"
+        }
+      }
+    ]
   }
 }
