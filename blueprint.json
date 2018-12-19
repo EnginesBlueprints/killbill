@@ -21,7 +21,7 @@
         "title": "Kill Bill"
       }
     },
-    "timestamp": "2018-12-19T11:38:01+11:00"
+    "timestamp": "2018-12-19T14:32:41+11:00"
   },
   "software": {
     "base": {
@@ -52,6 +52,9 @@
     "scripts": {
       "start": {
         "content": "#!/bin/sh\r\nsleep 600"
+      },
+      "install": {
+        "content": "#!/bin/sh\r\n#install"
       }
     },
     "service_configurations": [
