@@ -21,7 +21,7 @@
         "title": "Kill Bill"
       }
     },
-    "timestamp": "2018-12-19T11:02:11+11:00"
+    "timestamp": "2018-12-19T11:38:01+11:00"
   },
   "software": {
     "base": {
@@ -88,6 +88,14 @@
       {
         "name": "KILLBILL_DAO_PASSWORD",
         "value": "_Engines_Environment(passwd)",
+        "immutable": true,
+        "input": {
+          "type": "boolean"
+        }
+      },
+      {
+        "name": "one",
+        "value": "1",
         "immutable": true,
         "input": {
           "type": "boolean"
