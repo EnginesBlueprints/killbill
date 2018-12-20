@@ -21,14 +21,14 @@
         "title": "Kill Bill"
       }
     },
-    "timestamp": "2018-12-20T08:44:51+11:00"
+    "timestamp": "2018-12-20T11:39:04+11:00"
   },
   "software": {
     "base": {
       "name": "killbill",
       "framework": "docker",
       "parent_image": "killbill/killbill:0.20.0",
-      "run_as_user": "0",
+      "run_as_user": "root",
       "deployment_type": "web",
       "http_protocol": "https_and_http",
       "framework_port_override": 8080,
