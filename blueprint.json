@@ -21,7 +21,7 @@
         "title": "Kill Bill"
       }
     },
-    "timestamp": "2018-12-20T11:41:29+11:00"
+    "timestamp": "2018-12-20T12:59:49+11:00"
   },
   "software": {
     "base": {
@@ -51,10 +51,10 @@
     ],
     "scripts": {
       "start": {
-        "content": "#!/bin/sh\r\nsleep 600"
+        "content": "#!/bin/sh\r\n#need to add startup complete ..\r\n /opt/apache-tomcat-8.5.16/bin/startup.sh\r\n  while test -f /var/lib/tomcat/tomcat.pid\r\n   do\r\n    sleep 600\r\n    echo $! >/tmp/pid\r\n done\r\n    "
       },
       "install": {
-        "content": "#!/bin/sh\r\n#install\r\nls -la -R /home/engines"
+        "content": "#!/bin/sh\r\n#insta"
       }
     },
     "service_configurations": [
@@ -91,14 +91,6 @@
       {
         "name": "KILLBILL_DAO_PASSWORD",
         "value": "_Engines_Environment(dbpasswd)",
-        "immutable": true,
-        "input": {
-          "type": "boolean"
-        }
-      },
-      {
-        "name": "one",
-        "value": "1",
         "immutable": true,
         "input": {
           "type": "boolean"
